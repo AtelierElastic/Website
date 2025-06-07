@@ -3,11 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Static Site</title>
+  <title>Atelier Elastic</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Hello from my static site!</h1>
-  <p>This is a starting point.</p>
+  <div class="page-container">
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="logo">
+        <img src="logo.png" alt="Atelier Elastic Logo" />
+      </div>
+      <nav class="menu">
+        <a href="about.html">About</a>
+        <a href="index.html">Work</a>
+      </nav>
+    </header>
+
+    <!-- Filter Menu -->
+    <ul id="filter-menu">
+      <li class="active" data-filter="all">All</li>
+      <li data-filter="data-illustrations">Research</li>
+      <li data-filter="critical-cartography">Cartography &amp; Territorial Studies</li>
+      <li data-filter="architecture-visuals">Architectural Imagery</li>
+      <li data-filter="design-studies">Design Projects</li>
+    </ul>
+
+    <!-- Project Gallery -->
+    <div class="gallery">
+      <a class="project-thumb design-studies data-illustrations" href="/petite-maison">
+        <img alt="Petite Maison" src="petite-maison.jpg" />
+        <p>Petite Maison</p>
+      </a>
+
+      <a class="project-thumb architecture-visuals data-illustrations" href="/halle-des-soufflantes">
+        <img alt="Halle des Soufflantes" src="halle-des-soufflantes.png" />
+        <p>Halle des Soufflantes</p>
+      </a>
+
+      <a class="project-thumb data-illustrations" href="/from-scan-to-bim">
+        <img alt="From Scan to BIM" src="from-scan-to-bim.png" />
+        <p>From Scan to BIM</p>
+      </a>
+
+      <a class="project-thumb data-illustrations critical-cartography" href="/pollinators">
+        <img alt="Territorial Studies for Biodiversity: Pollinators" src="pollinators.jpg" />
+        <p>Territorial Studies for Biodiversity: Pollinators</p>
+      </a>
+
+      <a class="project-thumb architecture-visuals design-studies" href="/house-in-livezi">
+        <img alt="House in Livezi" src="house-in-livezi.png" />
+        <p>House in Livezi</p>
+      </a>
+    </div>
+
+  </div> <!-- END .page-container -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuItems = document.querySelectorAll("#filter-menu li");
+      const galleryItems = document.querySelectorAll(".gallery .project-thumb");
+
+      menuItems.forEach(button => {
+        button.addEventListener("click", () => {
+          const filter = button.dataset.filter;
+          menuItems.forEach(btn => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          galleryItems.forEach(item => {
+            if (filter === "all") {
+              item.style.display = "flex";
+            } else {
+              const isMatch = item.className.includes(filter);
+              item.style.display = isMatch ? "flex" : "none";
+            }
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
