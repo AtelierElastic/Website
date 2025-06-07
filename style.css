@@ -1,6 +1,136 @@
-body {
-  font-family: sans-serif;
-  padding: 2rem;
-  background-color: #f5f5f5;
-  color: #333;
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 5;
+  box-sizing: border-box;
 }
+
+/* === Base Page Styling === */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: hotpink;
+  background-image: url("background.jpg"); /* Make sure this file is uploaded */
+  background-size: cover;
+  background-repeat: repeat;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* === Layout Wrapper for Consistent Margins === */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 8rem;
+}
+
+/* === Header === */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 0;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.logo img {
+  height: 80px;
+  max-height: 80px;
+  width: auto;
+  display: block;
+}
+
+/* === Menu === */
+.menu a {
+  margin-left: 2rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #4c59e3; /* Blue hover */
+}
+
+/* === Filter Menu === */
+#filter-menu {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 2rem 0 1rem;
+  padding: 0;
+  justify-content: flex-start;
+  font-size: 0.9rem;
+}
+
+#filter-menu li {
+  padding: 0.5rem 0.7rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s ease;
+}
+
+#filter-menu li:hover {
+  color: #4c59e3;
+}
+
+#filter-menu li.active {
+  background: transparent;
+  border: 1px solid #4c59e3;
+  color: #000;
+}
+
+/* === Gallery === */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Always 3 items per row */
+  gap: 3rem;
+  margin: 2rem 0;
+}
+
+.project-thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.project-thumb:hover {
+  transform: scale(1.07);
+}
+
+.project-thumb:hover p {
+  color: #4c59e3;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+  aspect-ratio: 6 / 4.5;
+}
+
+.project-thumb p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  #filter-menu {
+    justify-content: center;
+  }
+}
+
