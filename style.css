@@ -9,7 +9,6 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: pink;
-  background-image: url("background.jpg"); /* Make sure this file is uploaded */
   background-size: cover;
   background-repeat: repeat;
   color: #222;
