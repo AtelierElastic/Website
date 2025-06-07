@@ -1,14 +1,14 @@
 /* === Reset === */
 * {
   margin: 0;
-  padding: 5;
+  padding: 2;
   box-sizing: border-box;
 }
 
 /* === Base Page Styling === */
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: hotpink;
+  background-color: blue;
   background-image: url("background.jpg"); /* Make sure this file is uploaded */
   background-size: cover;
   background-repeat: repeat;
