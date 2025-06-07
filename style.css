@@ -8,7 +8,7 @@
 /* === Base Page Styling === */
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: orange;
+  background-color: green;
   background-size: cover;
   background-repeat: repeat;
   color: #222;
@@ -18,7 +18,7 @@ body {
 /* === Layout Wrapper for Consistent Margins === */
 .container {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 5 auto;
   padding: 0 8rem;
 }
 
